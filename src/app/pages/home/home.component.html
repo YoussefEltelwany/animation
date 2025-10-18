@@ -1,0 +1,325 @@
+
+
+
+<section class="relative max-h-screen overflow-x-hidden w-screen">
+<app-hero></app-hero>
+</section>
+
+
+<section>
+  <div #about class="min-h-screen w-screen">
+    <div class="relative mb-8 mt-36 flex flex-col items-center gap-5">
+      <h2 class=" text-sm font-general  md:text-[10px]">youssef eltelwany</h2>
+      <p #MoveTitle class="mt-5  text-center text-7xl uppercase leading-[0.8] text-black md:text-5xl font-zentry ">
+        discover the future of <br> gaming with metagame layer
+      </p>
+    </div>
+
+
+        <div class="absolute bottom-[-150dvh]  left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular text-lg md:max-w-[34rem] md:mb-5
+
+        md:bottom-[-110dvh]
+         lg:bottom-[-120dvh]
+
+        ">
+          <p class="font-monospace">The Game of Games begins—your life, now an epic MMORPG</p>
+          <p class="text-gray-500">
+            Zentry unites every player from countless games and platforms, both
+            digital and physical, into a unified Play Economy
+          </p>
+        </div>
+
+
+
+        <div #clip class="h-dvh w-screen ">
+          <div class="absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl sm:h-[40vh] md:w-[25vw] mask-clip-path">
+            <img class="absolute left-0 top-0 size-full object-cover" src="/img/about.webp" alt="about" >
+          </div>
+        </div>
+
+  </div>
+
+
+</section>
+
+
+
+<section class="bg-black pb-20 md:pb-52">
+  <div class="container mx-auto px-4 md:px-10">
+    <!-- Text Intro -->
+    <div  class="px-4 py-20 md:py-32 text-center md:text-left">
+      <p class="font-circular text-base md:text-lg text-blue-50">
+        Into the Metagame Layer
+      </p>
+      <p
+        class="mx-auto md:mx-0 mt-3 max-w-md font-circular text-sm md:text-lg text-blue-50 opacity-60"
+      >
+        Immerse yourself in a rich and ever-expanding universe where a vibrant
+        array of products converge into an interconnected overlay experience on
+        your world.
+      </p>
+    </div>
+
+    <!-- First Tilt Card -->
+    <div
+      class="relative mb-10 h-[60vh] md:h-[65vh] w-full overflow-hidden rounded-md border border-white/10 cursor-grab"
+      #tilt
+      (mousemove)="onMouseMove($event, tilt)"
+      (mouseleave)="onMouseLeave(tilt)"
+    >
+      <video
+        src="videos/feature-1.mp4"
+        autoplay
+        muted
+        loop
+        class="absolute inset-0 size-full object-cover object-center"
+      ></video>
+
+      <div
+        class="relative z-10 flex size-full flex-col justify-between p-4 md:p-6 text-blue-50 bg-black/30 backdrop-blur-[1px]"
+      >
+        <div>
+          <h1
+            class="uppercase text-3xl md:text-6xl font-black font-zentry special-font leading-tight"
+          >
+            radia<b>n</b>t
+          </h1>
+          <p class="mt-2 md:mt-3 max-w-xs text-xs md:text-base opacity-80">
+            A cross-platform metagame app, turning your activities across Web2
+            and Web3 games into a rewarding adventure.
+          </p>
+        </div>
+
+        <div
+          class="relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm uppercase text-white/30"
+          #hoverButton
+          (mousemove)="onButtonMove($event, hoverButton)"
+          (mouseenter)="onButtonEnter()"
+          (mouseleave)="onButtonLeave()"
+        >
+          <div
+            class="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+            [style.opacity]="hoverOpacity"
+            [style.background]="
+              'radial-gradient(100px circle at ' +
+              cursorPosition.x +
+              'px ' +
+              cursorPosition.y +
+              'px, #656fe288, #00000026)'
+            "
+          ></div>
+          <p class="relative z-20 text-white">coming soon</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid Cards -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 auto-rows-[minmax(250px,_1fr)]"
+    >
+      <!-- Card 1 -->
+      <div
+        class="relative overflow-hidden rounded-md border border-white/10 h-[50vh] md:h-[65vh] cursor-grab"
+        #tilt1
+        (mousemove)="onMouseMove($event, tilt1)"
+        (mouseleave)="onMouseLeave(tilt1)"
+      >
+        <video
+          src="videos/feature-2.mp4"
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 size-full object-cover object-center"
+        ></video>
+
+        <div
+          class="relative z-10 flex size-full flex-col justify-between p-4 md:p-6 text-blue-50 bg-black/30 backdrop-blur-[1px]"
+        >
+          <div>
+            <h1
+              class="uppercase text-3xl md:text-6xl font-black font-zentry special-font leading-tight"
+            >
+              zig<b>m</b>a
+            </h1>
+            <p class="mt-2 md:mt-3 max-w-xs text-xs md:text-base opacity-80">
+              An anime and gaming-inspired NFT collection - the IP primed for
+              expansion.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="relative overflow-hidden rounded-md border border-white/10 h-[50vh] md:h-[65vh] cursor-grab"
+        #tilt2
+        (mousemove)="onMouseMove($event, tilt2)"
+        (mouseleave)="onMouseLeave(tilt2)"
+      >
+        <video
+          src="videos/feature-3.mp4"
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 size-full object-cover object-center"
+        ></video>
+
+        <div
+          class="relative z-10 flex size-full flex-col justify-between p-4 md:p-6 text-blue-50 bg-black/30 backdrop-blur-[1px]"
+        >
+          <div>
+            <h1
+              class="uppercase text-3xl md:text-6xl font-black font-zentry special-font leading-tight"
+            >
+              n<b>e</b>xus
+            </h1>
+            <p class="mt-2 md:mt-3 max-w-xs text-xs md:text-base opacity-80">
+              A gamified social hub, adding a new dimension of play to social
+              interaction for Web3 communities.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="relative overflow-hidden rounded-md border border-white/10 h-[50vh] md:h-[65vh] cursor-grab"
+        #tilt3
+        (mousemove)="onMouseMove($event, tilt3)"
+        (mouseleave)="onMouseLeave(tilt3)"
+      >
+        <video
+          src="videos/feature-4.mp4"
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 size-full object-cover object-center"
+        ></video>
+
+        <div
+          class="relative z-10 flex size-full flex-col justify-between p-4 md:p-6 text-blue-50 bg-black/30 backdrop-blur-[1px]"
+        >
+          <div>
+            <h1
+              class="uppercase text-3xl md:text-6xl font-black font-zentry special-font leading-tight"
+            >
+              az<b>u</b>l
+            </h1>
+            <p class="mt-2 md:mt-3 max-w-xs text-xs md:text-base opacity-80">
+              A cross-world AI Agent - elevating your gameplay to be more fun
+              and productive.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+      <!-- Video Card -->
+      <div class="rounded-md overflow-hidden h-[50vh] md:h-[65vh]">
+        <video
+          src="videos/feature-5.mp4"
+          autoplay
+          muted
+          loop
+          class="size-full object-cover object-center"
+        ></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="min-h-dvh w-screen bg-black text-blue-50">
+  <div class="flex size-full flex-col items-center py-10 pb-24">
+    <p class="font-general text-sm uppercase">youssef eltelwany </p>
+
+    <div class="relative size-full ">
+      <p #MoveTitle2 class="mt-5 mb-5 md:mb-20 text-center text-7xl uppercase leading-[0.8] text-white md:text-5xl font-zentry ">
+        discover the future of <br> gaming with metagame layer
+      </p>
+         <div class="relative md:h-dvh h-[90vh] w-full ">
+        <div class="absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5 custom-clip">
+          <div class="absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px] custom-transform cursor-grab">
+            <img #entrance class="object-contain" src="img/entrance.webp" alt="discover the future" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
+          <div class="flex h-full w-fit flex-col items-center md:items-start">
+            <p class="mt-4 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
+              Where realms converge, lies Zentry and the boundless pillar.
+              Discover its secrets and shape your fate amidst infinite
+              opportunities.
+            </p>
+
+            <button class="relative overflow-hidden mt-3 px-6 py-3 text-sm font-semibold text-gray-900
+         rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,215,0,0.7)] transition-all duration-300">discover prologue</button>
+          </div>
+        </div>
+
+  </div>
+</section>
+
+
+<section class="my-20 min-h-96 w-screen  px-10 ">
+ <div class="relative rounded-lg bg-black py-24 text-blue-50 overflow-hidden ">
+   <div class="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+    <!-- Text -->
+    <p class="mb-6 font-general text-[10px] uppercase tracking-widest text-blue-200/80">
+      Join Zentry
+    </p>
+    <h2 class="font-zentry text-5xl md:text-[6rem] font-black leading-[1]">
+      Let's build the <br />
+      new era of <br />
+      gaming together
+    </h2>
+     <button class="relative overflow-hidden mt-3 px-6 py-3 text-sm font-semibold text-gray-900
+         rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,215,0,0.7)] transition-all duration-300">contact us</button>
+
+  </div>
+
+  <!-- Left Images -->
+  <div
+    class="absolute top-0 left-0 w-1/2 h-full pointer-events-none flex flex-col items-start justify-center gap-10 px-4 sm:px-10">
+    <div class="w-40 sm:w-56 md:w-72 overflow-hidden rounded-xl">
+      <img #moveImg1
+        src="/img/contact-1.webp"
+        alt="contact image 1"
+        class="w-full h-auto object-cover contact-clip-path-1" />
+    </div>
+    <div class="w-32 sm:w-48 md:w-60 translate-y-10 sm:translate-y-20 overflow-hidden rounded-xl">
+      <img #moveImg2
+        src="/img/contact-2.webp"
+        alt="contact image 2"
+        class="w-full h-auto object-cover contact-clip-path-2" />
+    </div>
+  </div>
+
+  <!-- Right Swordman -->
+  <div
+    class="absolute bottom-0 right-0 w-48 sm:w-72 md:w-96 pointer-events-none flex justify-center md:justify-end pr-4 sm:pr-10">
+    <div class="relative">
+      <img #moveImg3
+        src="/img/swordman.webp"
+        alt="swordman"
+        class="w-full h-auto object-contain sword-man-clip-path" />
+      <img #moveImg4
+        src="/img/swordman-partial.webp"
+        alt="swordman partial"
+        class="absolute top-[1px] left-0 w-full h-auto object-contain opacity-80" />
+    </div>
+  </div>
+
+ </div>
+</section>
+
