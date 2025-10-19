@@ -4,18 +4,21 @@ import { HeroComponent } from "../../shared/hero/hero.component";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent],
+  imports: [HeroComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit {
 
-transformStyle: string = '';
+  cursorPosition = { x: 0, y: 0 };
+  hoverOpacity = 0;
+  transformStyle: string = '';
   @ViewChild('clip') clip!: ElementRef<HTMLDivElement>;
   @ViewChild('MoveTitle') titleAnimation!: ElementRef<HTMLDivElement>;
   @ViewChild('MoveTitle2') titleAnimation2!: ElementRef<HTMLDivElement>;
@@ -220,8 +223,7 @@ moveTitle() {
     element.style.transform = '';
   }
 
-    cursorPosition = { x: 0, y: 0 };
-  hoverOpacity = 0;
+
 
   onButtonMove(event: MouseEvent, button: HTMLDivElement) {
     const rect = button.getBoundingClientRect();

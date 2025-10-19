@@ -1,13 +1,13 @@
 import { NgClass ,isPlatformBrowser} from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild , AfterViewInit, PLATFORM_ID , Inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import gsap from "gsap";
 
 
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -39,7 +39,17 @@ isMenuOpen = false;
 
   ngAfterViewInit(): void {
       if (isPlatformBrowser(this.platformId)) {
-
+         setTimeout(() => {
+      const menu = this.menuLinks?.nativeElement;
+      if (menu) {
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            this.closeMenu();
+          });
+        });
+      }
+    }, 200);
       }
   }
 
